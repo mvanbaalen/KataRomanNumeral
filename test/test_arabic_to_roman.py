@@ -10,11 +10,30 @@ class TestRequirements(unittest.TestCase):
     def test_that_converter_returns_i_when_given_1(self):
         self.assertEqual("I", Converter.convert_from_arabic_to_roman(1))
 
-    def test_that_converter_returns_i_when_given_2(self):
+    def test_that_converter_returns_ii_when_given_2(self):
         self.assertEqual("II", Converter.convert_from_arabic_to_roman(2))
 
     def test_that_converter_returns_iii_when_given_3(self):
         self.assertEqual("III", Converter.convert_from_arabic_to_roman(3))
+
+    def test_that_converter_returns_v_when_given_5(self):
+        self.assertEqual("V", Converter.convert_from_arabic_to_roman(5))
+
+    def test_that_converter_returns_x_when_given_10(self):
+        self.assertEqual("X", Converter.convert_from_arabic_to_roman(10))
+
+    def test_that_converter_returns_l_when_given_50(self):
+        self.assertEqual("L", Converter.convert_from_arabic_to_roman(50))
+
+    def test_that_converter_returns_c_when_given_100(self):
+        self.assertEqual("C", Converter.convert_from_arabic_to_roman(100))
+
+    def test_that_converter_returns_d_when_given_500(self):
+        self.assertEqual("D", Converter.convert_from_arabic_to_roman(500))
+
+    def test_that_converter_returns_m_when_given_1000(self):
+        self.assertEqual("M", Converter.convert_from_arabic_to_roman(1000))
+
 
 if __name__ == '__main__':
     unittest.main()
