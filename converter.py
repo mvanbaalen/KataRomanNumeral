@@ -1,9 +1,6 @@
-from collections import OrderedDict
-
-
 class RomanNumeralConverter(object):
 
-    lookup = {
+    arabic_lookup = {
         1: "I",
         4: "IV",
         5: "V",
@@ -20,7 +17,7 @@ class RomanNumeralConverter(object):
     }
 
     # Using this value often, save as constant
-    LARGEST_VALUE = max(lookup.iterkeys())
+    LARGEST_VALUE = max(arabic_lookup.iterkeys())
 
     @classmethod
     def convert_from_arabic_to_roman(cls, number):
@@ -34,11 +31,11 @@ class RomanNumeralConverter(object):
         if number == 0:
             return ""
 
-        # Track the largest digit to use here
+        # Track the largest symbol, add it on, then convert the rest
         last_step = cls.LARGEST_VALUE
-        for step in sorted(cls.lookup.keys()):
+        for step in sorted(cls.arabic_lookup.keys()):
             if number < step or number > cls.LARGEST_VALUE:
-                return cls.lookup[last_step] + cls.convert_from_arabic_to_roman(number - last_step)
+                return cls.arabic_lookup[last_step] + cls.convert_from_arabic_to_roman(number - last_step)
             elif number == step:
-                return cls.lookup[step]
+                return cls.arabic_lookup[step]
             last_step = step
