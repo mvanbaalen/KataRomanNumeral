@@ -16,6 +16,22 @@ class RomanNumeralConverter(object):
         1000: "M"
     }
 
+    roman_lookup = {
+        "I": 1,
+        "IV": 4,
+        "V": 5,
+        "IX": 9,
+        "X": 10,
+        "XL": 40,
+        "L": 50,
+        "XC": 90,
+        "C": 100,
+        "CD": 400,
+        "D": 500,
+        "CM": 900,
+        "M": 1000
+    }
+
     # Using this value often, save as constant
     LARGEST_VALUE = max(arabic_lookup.iterkeys())
 
@@ -42,4 +58,9 @@ class RomanNumeralConverter(object):
 
     @classmethod
     def convert_from_roman_to_arabic(cls, number):
-        return 1
+
+        # Base case
+        if len(number) == 1:
+            return cls.roman_lookup[number]
+
+        return cls.roman_lookup[number[0]] + cls.convert_from_roman_to_arabic(number[1:])

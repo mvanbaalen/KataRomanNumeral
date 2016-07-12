@@ -25,5 +25,8 @@ class TestRequirements(unittest.TestCase):
     def test_that_converter_returns_1_when_given_i(self):
         self.assertEqual(1, Converter.convert_from_roman_to_arabic("I"))
 
+    def test_that_converter_returns_3_when_given_iii(self):
+        self.assertEqual(3, Converter.convert_from_roman_to_arabic("III"))
+
 if __name__ == '__main__':
     unittest.main()
