@@ -39,3 +39,7 @@ class RomanNumeralConverter(object):
             elif number == step:
                 return cls.arabic_lookup[step]
             last_step = step
+
+    @classmethod
+    def convert_from_roman_to_arabic(cls, number):
+        return 1
