@@ -63,4 +63,7 @@ class RomanNumeralConverter(object):
         if len(number) == 1:
             return cls.roman_lookup[number]
 
+        if cls.roman_lookup[number[0]] < cls.roman_lookup[number[1]]:
+            return cls.convert_from_roman_to_arabic(number[1:]) - cls.roman_lookup[number[0]]
+
         return cls.roman_lookup[number[0]] + cls.convert_from_roman_to_arabic(number[1:])
