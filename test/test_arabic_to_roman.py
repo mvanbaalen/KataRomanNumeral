@@ -2,7 +2,7 @@ import unittest
 from converter import RomanNumeralConverter as Converter
 
 
-class TestRequirements(unittest.TestCase):
+class TestToRomanConversion(unittest.TestCase):
 
     def test_that_tests_are_running(self):
         self.assertEqual(True, True)
