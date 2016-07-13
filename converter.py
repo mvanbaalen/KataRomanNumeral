@@ -1,8 +1,10 @@
 import numbers
 
+
 class RomanNumeralConverter(object):
 
     arabic_lookup = {
+        0: "",
         1: "I",
         4: "IV",
         5: "V",
@@ -50,11 +52,6 @@ class RomanNumeralConverter(object):
 
     @classmethod
     def to_roman(cls, number):
-
-        # Base case
-        if number == 0:
-            return ""
-
         # Track the largest symbol, add it on, then convert the rest
         last_step = cls.LARGEST_VALUE
         for step in sorted(cls.arabic_lookup.keys()):

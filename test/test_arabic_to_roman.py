@@ -7,6 +7,9 @@ class TestToRomanConversion(unittest.TestCase):
     def test_that_tests_are_running(self):
         self.assertEqual(True, True)
 
+    def test_that_converter_returns_empty_when_given_0(self):
+        self.assertEqual("", Converter.convert_from_arabic_to_roman(0))
+
     def test_that_converter_returns_i_when_given_1(self):
         self.assertEqual("I", Converter.convert_from_arabic_to_roman(1))
 
