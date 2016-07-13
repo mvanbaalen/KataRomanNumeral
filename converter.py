@@ -33,9 +33,17 @@ class RomanNumeralConverter(object):
     def convert_from_arabic_to_roman(cls, number):
         # Use recursion to add numbers together
 
-        # Sanity check
+        # Sanity checks
+        try:
+            number = int(number)
+        except ValueError:
+            raise ValueError("Tried to convert a non-number")
+
         if number < 0:
             raise ValueError("Tried to convert a negative number")
+        elif number > 3999:
+            raise ValueError("Tried to convert a number larger than 3999")
+
 
         # Base case
         if number == 0:
