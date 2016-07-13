@@ -1,3 +1,5 @@
+import numbers
+
 class RomanNumeralConverter(object):
 
     arabic_lookup = {
@@ -31,19 +33,23 @@ class RomanNumeralConverter(object):
 
     @classmethod
     def convert_from_arabic_to_roman(cls, number):
-        # Use recursion to add numbers together
-
         # Sanity checks
         try:
-            number = int(number)
+            int(number)
         except ValueError:
             raise ValueError("Tried to convert a non-number")
-
+        if not isinstance(number, numbers.Integral):
+            raise ValueError("Tried to convert a non-integer number")
         if number < 0:
             raise ValueError("Tried to convert a negative number")
         elif number > 3999:
             raise ValueError("Tried to convert a number larger than 3999")
 
+        # Recursive call
+        return cls.to_roman(number)
+
+    @classmethod
+    def to_roman(cls, number):
 
         # Base case
         if number == 0:

@@ -16,5 +16,8 @@ class TestToRomanConversion(unittest.TestCase):
     def test_that_converter_handles_a_string_value(self):
         self.assertRaises(ValueError, Converter.convert_from_arabic_to_roman, "one")
 
+    def test_that_converter_handles_a_decimal_value(self):
+        self.assertRaises(ValueError, Converter.convert_from_arabic_to_roman, 10.5)
+
 if __name__ == '__main__':
     unittest.main()
