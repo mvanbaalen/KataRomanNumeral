@@ -31,5 +31,6 @@ class TestToArabicConversion(unittest.TestCase):
     def test_that_converter_returns_2000_when_given_mm(self):
         self.assertEqual(2000, Converter.convert_from_roman_to_arabic("MM"))
 
+
 if __name__ == '__main__':
     unittest.main()

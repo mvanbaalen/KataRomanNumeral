@@ -19,5 +19,8 @@ class TestToRomanConversion(unittest.TestCase):
     def test_that_converter_handles_a_decimal_value(self):
         self.assertRaises(ValueError, Converter.convert_from_arabic_to_roman, 10.5)
 
+    def test_that_converter_handles_undefined_symbol(self):
+        self.assertRaises(ValueError, Converter.convert_from_roman_to_arabic, "XIO")
+
 if __name__ == '__main__':
     unittest.main()

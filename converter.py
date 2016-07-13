@@ -64,6 +64,9 @@ class RomanNumeralConverter(object):
     @classmethod
     def convert_from_roman_to_arabic(cls, number):
 
+        if not all(symbol in cls.roman_lookup.keys() for symbol in number):
+            raise ValueError("Tried to convert unrecognized symbol")
+
         # Base case
         if len(number) == 1:
             return cls.roman_lookup[number]
