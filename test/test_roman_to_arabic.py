@@ -25,6 +25,9 @@ class TestToArabicConversion(unittest.TestCase):
     def test_that_converter_returns_400_when_given_cd(self):
         self.assertEqual(400, Converter.convert_from_roman_to_arabic("CD"))
 
+    def test_that_converter_returns_501_when_given_di(self):
+        self.assertEqual(501, Converter.convert_from_roman_to_arabic("DI"))
+
     def test_that_converter_returns_2000_when_given_mm(self):
         self.assertEqual(2000, Converter.convert_from_roman_to_arabic("MM"))
 
